@@ -7,7 +7,7 @@ with beam.Pipeline(options=PipelineOptions()) as p:
     events = (p
                      | "Creating data" >> beam.Create([('dev_1', '{"device": "0003", status": "healthy"}')])
                      | "Pushing messages to Kafka" >> kafkaio.KafkaProduce(
-                                                                            topic='notifications',
+                                                                            topic='my_love',
                                                                             servers="*.*.*.*:9092"
                                                                         )
                     )
